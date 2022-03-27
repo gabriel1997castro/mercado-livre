@@ -1,36 +1,27 @@
 import styled from 'styled-components'
-
-export const Input = styled.input`
+export const Container = styled.header`
+  display: flex;
   width: 100%;
-  height: 2rem;
-  border-style: none;
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
-  padding-left: 1rem;
-  padding-right: 1rem;
-  min-width: 10rem;
+  height: 3rem;
+  background-color: ${props => props.theme.colors.primary};
+  justify-content: center;
+  align-items: center;
+`
 
-  &:focus {
-    outline: none;
+export const Logo = styled.img`
+  object-fit: contain;
+  height: 2rem;
+  margin-right: 2rem;
+  @media (max-width: 700px) {
+    margin-right: 1rem;
   }
 `
 
-export const Container = styled.div`
+export const ContainerAndLogo = styled.div`
   display: flex;
-  width: 50%;
-  align-items: center;
-  padding-left: 0.3rem;
-  background-color: ${props => props.theme.colors.tertiaryBackground};
-`
-export const IconContainer = styled.div`
-  display: flex;
-  width: 3rem;
-  min-width: 2rem;
-  height: 2rem;
-  background-color: #efefef;
-  align-items: center;
-  justify-content: center;
-`
-export const SearchIcon = styled.img`
-  height: 1rem;
-  color: grey !important;
+  width: 70%;
+
+  @media (max-width: 700px) {
+    width: 90%;
+  }
 `

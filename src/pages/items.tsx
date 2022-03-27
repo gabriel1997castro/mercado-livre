@@ -1,16 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { GetStaticProps } from "next"
-import styled from 'styled-components'
 import SearchResults from '../components/SearchResults'
 import { api } from '../services/apis'
-import { result as resultType } from '../types/results'
+import { result as resultType } from '../types/result'
+import { Container } from '../styles/pages/Items'
 
-const Container = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
+
 
 interface Props {
   results: resultType[]

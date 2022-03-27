@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, IconContainer, Input, SearchIcon } from '../styles/components/Header'
+import { Container, IconContainer, Input, SearchIcon } from '../styles/components/SearchBar'
 
 export default function SearchBar() {
   return (
