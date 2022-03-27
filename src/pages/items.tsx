@@ -1,5 +1,5 @@
 import React from 'react'
-import { GetStaticProps } from "next"
+import { GetServerSideProps } from "next"
 import SearchResults from '../components/SearchResults'
 import { api } from '../services/apis'
 import { result as resultType } from '../types/result'
@@ -18,9 +18,9 @@ export default function Items({ results, error }: Props) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const props = { results: [], error: false }
-  await api.get("/sites/MLA/search?q=:query")
+  await api.get("/sites/MLA/search?q=:" + context.query.search)
     .then((res) => {
       if (res.status >= 200 && res.status < 300) {
         props.results = res.data.results
