@@ -14,3 +14,12 @@ export const Container = styled.div`
     width: 100%;
   }
 `
+
+export const Error = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: ${props => props.theme.colors.tertiaryBackground};
+  min-height: 60vh;
+`

@@ -9,21 +9,24 @@ import { Container } from '../styles/pages/Items'
 
 interface Props {
   results: resultType[]
+  error: boolean;
 }
 
-export default function Items({ results }: Props) {
-
+export default function Items({ results, error }: Props) {
   return (
-    <Container><SearchResults results={results} /></Container>
+    <Container><SearchResults results={results} error={error} /></Container>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const props = { results: [] }
+  const props = { results: [], error: false }
   await api.get("/sites/MLA/search?q=:query")
     .then((res) => {
       if (res.status >= 200 && res.status < 300) {
         props.results = res.data.results
+      } else {
+        props.results = []
+        props.error = true
       }
     })
   return { props: props }
