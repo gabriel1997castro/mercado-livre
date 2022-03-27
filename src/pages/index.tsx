@@ -1,20 +1,18 @@
 import Head from 'next/head'
+import Header from '../components/Header'
+import { Container } from '../styles/pages/Home'
 
 
 const Home: React.FC = () => {
   return (
-    <div>
+    <Container>
       <Head>
-        <title>Homepage</title>
+        <title>MercadoLivre</title>
       </Head>
-
+      <Header />
       <main>
-        <img src="./logo.png" alt="logo" />
-        <h1>
-          Hello World
-        </h1>
       </main>
-    </div>
+    </Container>
   )
 }
 export default Home
