@@ -9,7 +9,6 @@ const Home: React.FC = () => {
       <Head>
         <title>MercadoLivre</title>
       </Head>
-      <Header />
       <main>
       </main>
     </Container>
