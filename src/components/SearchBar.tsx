@@ -12,11 +12,9 @@ export default function SearchBar() {
   }
 
   return (
-    <Container>
-      <form style={{ width: '100%' }} onSubmit={handleSearch}>
-        <Input onChange={(e) => setQuery(e.target.value)} />
-      </form>
-      <IconContainer><SearchIcon src="./magnifying-glass-solid.svg" /></IconContainer>
+    <Container onSubmit={handleSearch}>
+      <Input onChange={(e) => setQuery(e.target.value)} />
+      <IconContainer type="submit"><SearchIcon src="./magnifying-glass-solid.svg" /></IconContainer>
     </Container>
   )
 }

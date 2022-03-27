@@ -1,10 +1,9 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const Container = styled.form`
   display: flex;
   width: 100%;
   align-items: center;
-  padding-left: 0.3rem;
   background-color: ${props => props.theme.colors.tertiaryBackground};
 `
 
@@ -13,8 +12,8 @@ export const Input = styled.input`
   height: 2rem;
   border-style: none;
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   min-width: 10rem;
 
   &:focus {
@@ -22,7 +21,7 @@ export const Input = styled.input`
   }
 `
 
-export const IconContainer = styled.div`
+export const IconContainer = styled.button`
   display: flex;
   width: 3rem;
   min-width: 2rem;
@@ -30,6 +29,9 @@ export const IconContainer = styled.div`
   background-color: #efefef;
   align-items: center;
   justify-content: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
 `
 export const SearchIcon = styled.img`
   height: 1rem;
