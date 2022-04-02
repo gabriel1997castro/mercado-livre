@@ -1,1 +1,3 @@
-export type UiState = {}
+export type UiState = {
+  language: string
+}

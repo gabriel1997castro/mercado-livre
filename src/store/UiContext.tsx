@@ -16,7 +16,9 @@ type UiStateUpdater = [
 
 type SetNewUiState = (arg0: UiState) => void;
 type UiContextHook = () => [UiState, SetNewUiState];
-const initialState: UiState = {};
+const initialState: UiState = {
+  language: 'es-AR'
+};
 
 export const UiContext = createContext<UiStateUpdater | UiState>(
   initialState
