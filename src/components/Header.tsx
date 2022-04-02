@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <Container>
       <ContainerAndLogo>
-        <Logo src="./logo-meli.png" alt="logo" />
+        <Logo src="/logo-meli.png" alt="logo" />
         <SearchBar />
       </ContainerAndLogo>
     </Container>

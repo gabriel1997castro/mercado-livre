@@ -14,7 +14,7 @@ export default function SearchBar() {
   return (
     <Container onSubmit={handleSearch}>
       <Input onChange={(e) => setQuery(e.target.value)} />
-      <IconContainer type="submit"><SearchIcon src="./magnifying-glass-solid.svg" /></IconContainer>
+      <IconContainer type="submit"><SearchIcon src="/magnifying-glass-solid.svg" /></IconContainer>
     </Container>
   )
 }
