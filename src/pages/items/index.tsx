@@ -1,9 +1,9 @@
 import React from 'react'
 import { GetServerSideProps } from "next"
-import SearchResults from '../components/SearchResults'
-import { api } from '../services/apis'
-import { result as resultType } from '../types/result'
-import { Container } from '../styles/pages/Items'
+import SearchResults from '../../components/SearchResults'
+import { api } from '../../services/apis'
+import { result as resultType } from '../../types/result'
+import { Container } from '../../styles/pages/Items'
 
 
 
@@ -20,7 +20,7 @@ export default function Items({ results, error }: Props) {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const props = { results: [], error: false }
-  await api.get("/sites/MLA/search?q=:" + context.query.search)
+  await api.get("/sites/MLA/search?q=:" + context.query.search + "&limit=4")
     .then((res) => {
       if (res.status >= 200 && res.status < 300) {
         props.results = res.data.results

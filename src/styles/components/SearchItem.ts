@@ -20,6 +20,8 @@ export const ContainerImg = styled.div`
   height: 8rem;
   padding: 0.5rem;
 
+  cursor: pointer;
+
   @media (max-width: 700px) {
     width: 8rem;
   }
@@ -64,4 +66,5 @@ export const Price = styled.span`
 
 export const Title = styled.span`
   padding: 0.5rem;
+  cursor: pointer;
 `
