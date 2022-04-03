@@ -1,3 +1,4 @@
 export const es = {
-  sold: 'vendidos'
+  sold: 'vendidos',
+  'Product Description': 'Descripción del producto'
 }

@@ -3,12 +3,13 @@ import { useEffect } from "react";
 import styled from "styled-components";
 import ProductDetails from "../../components/ProductDetails";
 import { api } from "../../services/apis"
-import { product as productType } from "../../types/product";
+import { product as productType, description as descriptionType } from "../../types/product";
 
 
 interface Props {
   error: boolean;
   product: productType;
+  description: descriptionType;
 }
 
 const Container = styled.div`
@@ -17,18 +18,18 @@ const Container = styled.div`
   align-items: center;
 `;
 
-export default function Product({ product, error }: Props) {
+export default function Product({ product, error, description }: Props) {
   useEffect(() => {
     console.log(product)
   }, [])
   return (
-    <Container><ProductDetails product={product} /></Container>
+    <Container><ProductDetails product={product} description={description} /></Container>
   )
 }
 
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const props = { product: [], error: false }
+  const props = { product: [], error: false, description: {} }
   await api.get("/items/" + context.params.id)
     .then((res) => {
       console.log(res)
@@ -39,5 +40,17 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         props.error = true
       }
     })
+
+  await api.get("/items/" + context.params.id + '/description')
+    .then((res) => {
+      if (res.status >= 200 && res.status < 300) {
+        props.description = res.data
+      } else {
+        props.description = []
+        props.error = true
+      }
+    })
+
+
   return { props: props }
 }

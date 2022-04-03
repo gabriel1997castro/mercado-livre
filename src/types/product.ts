@@ -547,4 +547,19 @@ const productExample = {
   channels: ['marketplace']
 }
 
+const descriptionExample = {
+  text: '',
+  plain_text:
+    'Este teclado Redragon de alto rendimiento hará que disfrutes de horas ilimitadas de juego. Está diseñado especialmente para que puedas expresar tanto tus habilidades como tu estilo. Mejorá muchísimo tu experiencia de gaming, ya seas un aficionado o todo un experto, y hacé que tus jugadas alcancen otro nivel. Distinción a todo color Su retroiluminación le dará un toque diferente a tu equipo y destacará las teclas cuando desees utilizarlo en espacios poco iluminados.',
+  last_updated: '2019-11-15T16:32:56.000Z',
+  date_created: '2019-11-15T16:32:56.000Z',
+  snapshot: {
+    url: 'http://descriptions.mlstatic.com/D-MLA825580084.jpg?hash=8520c3b8559cb08aa7e782b8f5334ffe_0x0',
+    width: 0,
+    height: 0,
+    status: ''
+  }
+}
+
+export type description = typeof descriptionExample
 export type product = typeof productExample
