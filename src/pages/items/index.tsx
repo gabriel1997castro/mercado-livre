@@ -7,6 +7,9 @@ import { categories as categoriesType, filterCategory, filterItem } from '../../
 import { Container } from '../../styles/pages/Items'
 import { Breadcrumb } from '../../components/Breadcrumb'
 import { extractFilterCategories } from '../../utils/parsers'
+import { Head } from 'next/document'
+import { translate } from '../../utils/translation'
+import { useUiContext } from '../../store/UiContext'
 
 
 
@@ -17,8 +20,13 @@ interface Props {
 }
 
 export default function Items({ results, error, categories }: Props) {
+  const [{ language }] = useUiContext()
   return (
     <Container>
+      <Head>
+        <title>{translate(language, "Search results")}</title>
+        <meta name="description" content={"Show products searched in the search bar"} />
+      </Head>
       {categories && <Breadcrumb categories={categories} />}
       <SearchResults results={results} error={error} />
     </Container>

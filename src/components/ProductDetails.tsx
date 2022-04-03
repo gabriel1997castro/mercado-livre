@@ -14,9 +14,9 @@ export default function ProductDetails({ product, description }) {
       <ProductDetailsRow changeDirectionOnMobile>
         <ProductDetailsColumn flex="3">
           <ContainerImg>
-            <ProductImg src={product.pictures[0].url} />
+            <ProductImg src={product.pictures[0].url} alt={translate(language, "product")} />
           </ContainerImg>
-          <DescriptionTitle>{translate(language, "Product Description")}</DescriptionTitle>
+          <DescriptionTitle>{translate(language, "Product description")}</DescriptionTitle>
           <br />
           <Description>{description.plain_text}</Description>
         </ProductDetailsColumn>
@@ -29,7 +29,7 @@ export default function ProductDetails({ product, description }) {
               <span>{price[1]}</span>
             </span>
           </Price>
-          <Button style={{ width: '10rem' }} type="button">Comprar</Button>
+          <Button aria-label={translate(language, 'Buy')} style={{ width: '10rem' }} type="button">{translate(language, "Buy")}</Button>
         </ProductDetailsColumn>
       </ProductDetailsRow>
     </Container>

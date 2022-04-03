@@ -13,6 +13,7 @@ export const Container = styled.header`
 export const Logo = styled.img`
   object-fit: contain;
   height: 2rem;
+  width: 2.5rem;
   margin-right: 2rem;
   @media ${MEDIA_BREAKPOINTS.mobile} {
     margin-right: 1rem;

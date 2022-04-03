@@ -21,9 +21,14 @@ export const Container = styled.div`
 
 export const ProductImg = styled.img`
   object-fit: contain;
+  width: 25rem;
   height: 100%;
   @media ${MEDIA_BREAKPOINTS.tablet} {
-    width: 25rem;
+    width: 12rem;
+    max-height: 18rem;
+  }
+  @media ${MEDIA_BREAKPOINTS.laptop} {
+    width: 15rem;
     max-height: 26rem;
   }
 `
@@ -32,13 +37,18 @@ export const ContainerImg = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 25rem;
   max-height: 30rem;
   padding: 0.5rem;
 
   cursor: pointer;
 
   @media ${MEDIA_BREAKPOINTS.tablet} {
-    width: 8rem;
+    width: 12rem;
+    max-height: 18rem;
+  }
+  @media ${MEDIA_BREAKPOINTS.laptop} {
+    width: 15rem;
     max-height: 26rem;
   }
 `

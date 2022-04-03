@@ -34,5 +34,6 @@ export const IconButton = styled(Button)`
 `
 export const SearchIcon = styled.img`
   height: 1rem;
+  width: 1rem;
   color: grey !important;
 `
