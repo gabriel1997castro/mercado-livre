@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
-import { Container, IconContainer, Input, SearchIcon } from '../styles/components/SearchBar'
+import { Container, IconButton, Input, SearchIcon } from '../styles/components/SearchBar'
 
 export default function SearchBar() {
   const [query, setQuery] = useState("")
@@ -14,7 +14,7 @@ export default function SearchBar() {
   return (
     <Container onSubmit={handleSearch}>
       <Input onChange={(e) => setQuery(e.target.value)} />
-      <IconContainer type="submit"><SearchIcon src="/magnifying-glass-solid.svg" /></IconContainer>
+      <IconButton type="submit" disabled={query === ""}><SearchIcon src="/magnifying-glass-solid.svg" /></IconButton>
     </Container>
   )
 }

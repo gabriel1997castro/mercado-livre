@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
   width: 70%;
   margin: 2rem;
-  background-color: ${props => props.theme.colors.tertiaryBackground};
+  background-color: ${props => props.theme.colors.background.tertiary};
   min-height: 70vh;
 
   @media (max-width: 700px) {
@@ -20,6 +20,6 @@ export const Error = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: ${props => props.theme.colors.tertiaryBackground};
+  background-color: ${props => props.theme.colors.background.tertiary};
   min-height: 60vh;
 `

@@ -1,11 +1,28 @@
 const theme = {
   colors: {
-    primary: '#ffe600',
-    primaryBorder: '#c1b74d',
-    text: '#333',
-    primaryBackground: '#f5f5f5',
-    secondaryBackground: '#f7f7f7',
-    tertiaryBackground: '#FFF'
+    text: {
+      primary: '#333',
+      secondary: ''
+    },
+    border: {
+      searchBar: '#c1b74d'
+    },
+    background: {
+      primary: '#f5f5f5',
+      secondary: '#f7f7f7',
+      tertiary: '#FFF',
+      fourth: '#ffe600'
+    },
+    button: {
+      background: {
+        primary: '#3483fa',
+        secondary: '#efefef'
+      },
+      text: {
+        primary: '#FFF',
+        secondary: '#333'
+      }
+    }
   }
 }
 

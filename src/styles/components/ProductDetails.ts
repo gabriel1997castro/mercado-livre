@@ -4,7 +4,7 @@ import { Column, Row } from './BaseComponents'
 export const Container = styled.div`
   width: 70%;
   margin: 2rem;
-  background-color: ${props => props.theme.colors.tertiaryBackground};
+  background-color: ${props => props.theme.colors.background.tertiary};
   min-height: 70vh;
   min-width: 25rem;
 
@@ -41,7 +41,7 @@ export const ProductTitle = styled.h1`
 `
 
 export const ProductInfo = styled.span`
-  color: rgba(0, 0, 0, 0.55);
+  color: ${props => props.theme.colors.text.secondary};
   font-size: 0.9rem;
   font-weight: 400;
   white-space: pre-wrap;

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useUiContext } from '../store/UiContext';
+import { Button } from '../styles/components/BaseComponents';
 import { Container, ContainerImg, Description, DescriptionTitle, Price, ProductDetailsColumn, ProductImg, ProductInfo, ProductTitle, ProductDetailsRow } from '../styles/components/ProductDetails';
 import { parseCondition, parsePrice, parseSoldQuantity } from '../utils/parsers';
 import { translate } from '../utils/translation';
@@ -27,6 +28,7 @@ export default function ProductDetails({ product, description }) {
               <span>{price[1]}</span>
             </span>
           </Price>
+          <Button type="button">Comprar</Button>
         </ProductDetailsColumn>
       </ProductDetailsRow>
     </Container>

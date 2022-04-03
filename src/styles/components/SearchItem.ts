@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   width: 100%;
-  background-color: ${props => props.theme.colors.tertiaryBackground};
+  background-color: ${props => props.theme.colors.background.tertiary};
   flex-direction: column;
 `
 
@@ -35,7 +35,7 @@ export const ProductImg = styled.img`
 
 export const Divider = styled.div`
   display: flex;
-  background-color: ${props => props.theme.colors.secondaryBackground};
+  background-color: ${props => props.theme.colors.background.secondary};
   height: 2px;
   width: 98%;
   align-self: center;

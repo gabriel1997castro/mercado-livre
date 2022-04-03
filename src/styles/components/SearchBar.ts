@@ -1,10 +1,11 @@
 import styled from 'styled-components'
+import { Button } from './BaseComponents'
 
 export const Container = styled.form`
   display: flex;
   width: 100%;
   align-items: center;
-  background-color: ${props => props.theme.colors.tertiaryBackground};
+  background-color: ${props => props.theme.colors.background.tertiary};
 `
 
 export const Input = styled.input`
@@ -21,17 +22,15 @@ export const Input = styled.input`
   }
 `
 
-export const IconContainer = styled.button`
+export const IconButton = styled(Button)`
   display: flex;
   width: 3rem;
   min-width: 2rem;
   height: 2rem;
-  background-color: #efefef;
+  background-color: ${props => props.theme.colors.button.background.secondary};
   align-items: center;
   justify-content: center;
-  outline: none;
-  border: none;
-  cursor: pointer;
+  border-radius: 0;
 `
 export const SearchIcon = styled.img`
   height: 1rem;
