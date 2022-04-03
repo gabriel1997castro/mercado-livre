@@ -9,7 +9,11 @@
 
 ## :zap: About
 
-This is a simple project made with NextJs and it is simplified app with core functionalities of MELI.
+This is a simple project made with NextJs and it is a simplified app with core functionalities of MELI.
+
+The project was done in NextJs to allow the generation of the static page on the server-side to solve SEO issues. The requests to the MELI API are done on the server-side too and the main pages have meta tags to help on that too.
+
+Some static words used in the website like placeholders and others are using a function "translate", if I had access to a translation engine it could be easily changed.
 
 ### Functional description of the application
 
