@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { useUiContext } from '../store/UiContext';
-import { parseCondition, parseSoldQuantity } from '../utils/parsers';
+import { parseCondition, parsePrice, parseSoldQuantity } from '../utils/parsers';
 
 const Container = styled.div`
   width: 70%;
@@ -62,7 +62,12 @@ export const ProductInfo = styled.span`
   font-size: 14px;
   font-weight: 400;
   white-space: pre-wrap;
-    `
+`
+
+export const Price = styled.span`
+  font-size: 1.3rem;
+  padding: 0.5rem;
+`
 
 export default function ProductDetails({ product }) {
   const [{ language }] = useUiContext();
@@ -77,6 +82,7 @@ export default function ProductDetails({ product }) {
         <Column flex={1}>
           <ProductInfo>{parseCondition(product)} - {parseSoldQuantity(language, product)}</ProductInfo>
           <ProductTitle>{product.title}</ProductTitle>
+          <Price>{parsePrice(language, product)}</Price>
         </Column></Row>
     </Container>
   )
