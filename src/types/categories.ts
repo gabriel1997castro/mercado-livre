@@ -104,5 +104,17 @@ const filterCategoryExample = {
   name: 'Celulares y Teléfonos'
 }
 
+export type filterItem = {
+  id: string
+  name: string
+}
+
+export type filter = {
+  id: string
+  name: string
+  type: string
+  path_from_root: filterItem[]
+}
+
 export type filterCategory = typeof filterCategoryExample
 export type categories = typeof categoriesExample

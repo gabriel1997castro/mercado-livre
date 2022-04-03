@@ -1,7 +1,13 @@
 import { product } from '../types/product'
 import { translate } from './translation'
 import { result as resultType } from '../types/result'
-import { filterCategory } from '../types/categories'
+import { product as productType } from '../types/product'
+import {
+  categories as categoriesType,
+  filter,
+  filterCategory,
+  filterItem
+} from '../types/categories'
 
 export const parseCondition = (product: product): string => {
   try {
@@ -37,13 +43,57 @@ export function parsePrice(
   }).format(price)
 }
 
-export function extractFilterCategories(filters: any): filterCategory[] {
+export function extractFilterCategories(filters: any): filterItem[] {
   try {
     if (Array.isArray(filters)) {
       const categoryValues = filters.filter(item => item.id === 'category')[0]
         .values[0].path_from_root
       return categoryValues
     }
+  } catch (err) {
+    console.log('error in extractFilterCategories')
+    return []
+  }
+}
+
+// export function extractPathFromRoot(filters: filter[]): filterCategory[] {
+//   try {
+//     let newArr = []
+//     if (Array.isArray(filters)) {
+//       filters.map(item => (newArr = [...item.path_from_root]))
+//       return newArr
+//     }
+//   } catch (err) {
+//     console.log('error in extractFilterCategories')
+//     return []
+//   }
+// }
+
+export function extractAttributeValue(product: productType, attribute: string) {
+  try {
+    const att = product.attributes.filter(item => item.id === attribute)[0]
+    return att.values
+  } catch (error) {
+    console.log('error in extractAttributeValue')
+    return []
+  }
+}
+
+export function extractBreadcrumbData(
+  categories: categoriesType,
+  product: productType
+): filterCategory[] {
+  try {
+    let newArr = []
+    if (categories && categories.path_from_root) {
+      newArr = [...categories.path_from_root]
+    }
+    if (product && product.attributes) {
+      const brand = extractAttributeValue(product, 'BRAND')
+      const model = extractAttributeValue(product, 'MODEL')
+      newArr = [...newArr, ...brand, ...model]
+    }
+    return newArr
   } catch (err) {
     console.log('error in extractFilterCategories')
     return []

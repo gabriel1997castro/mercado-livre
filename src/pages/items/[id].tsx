@@ -1,10 +1,12 @@
 import { GetServerSideProps } from "next"
 import { useEffect } from "react";
 import styled from "styled-components";
+import { Breadcrumb } from "../../components/Breadcrumb";
 import ProductDetails from "../../components/ProductDetails";
 import { api } from "../../services/apis"
-import { categories as categoriesType } from "../../types/categories";
+import { categories as categoriesType, filter } from "../../types/categories";
 import { product as productType, description as descriptionType } from "../../types/product";
+import { extractBreadcrumbData } from "../../utils/parsers";
 
 
 interface Props {
@@ -18,14 +20,16 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `;
 
 export default function Product({ product, error, description, categories }: Props) {
   useEffect(() => {
-    console.log(categories)
+    console.log('categories', categories)
   }, [])
   return (
     <Container>
+      {categories && <Breadcrumb categories={extractBreadcrumbData(categories, product)} />}
       <ProductDetails product={product} description={description} />
     </Container>
   )

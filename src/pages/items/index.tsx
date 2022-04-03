@@ -3,7 +3,7 @@ import { GetServerSideProps } from "next"
 import SearchResults from '../../components/SearchResults'
 import { api } from '../../services/apis'
 import { result as resultType } from '../../types/result'
-import { categories as categoriesType, filterCategory } from '../../types/categories'
+import { categories as categoriesType, filterCategory, filterItem } from '../../types/categories'
 import { Container } from '../../styles/pages/Items'
 import { Breadcrumb } from '../../components/Breadcrumb'
 import { extractFilterCategories } from '../../utils/parsers'
@@ -13,7 +13,7 @@ import { extractFilterCategories } from '../../utils/parsers'
 interface Props {
   results: resultType[]
   error: boolean;
-  categories: filterCategory[]
+  categories: filterItem[]
 }
 
 export default function Items({ results, error, categories }: Props) {
