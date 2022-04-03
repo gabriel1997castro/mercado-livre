@@ -18,7 +18,7 @@ export function Breadcrumb({ categories }: Props) {
         categories.map((category, index) => {
           return (
             <>
-              <span key={category.id}>{category.name}</span>
+              <span key={category.name}>{category.name}</span>
               {!isTheLastOne(categories, index) && <span>{'>'}</span>}
             </>
           )
