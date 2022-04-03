@@ -1,6 +1,7 @@
 import { product } from '../types/product'
 import { translate } from './translation'
 import { result as resultType } from '../types/result'
+import { filterCategory } from '../types/categories'
 
 export const parseCondition = (product: product): string => {
   try {
@@ -28,11 +29,23 @@ export function parsePrice(
 ) {
   const { currency_id: currency } = result
   const { price } = result
-  const config: Intl.NumberFormatOptions = {
+  return Intl.NumberFormat(language, {
     style: 'currency',
-    currency: currency
+    currency: currency,
+    maximumFractionDigits:
+      maximumFractionDigits !== undefined ? maximumFractionDigits : 2
+  }).format(price)
+}
+
+export function extractFilterCategories(filters: any): filterCategory[] {
+  try {
+    if (Array.isArray(filters)) {
+      const categoryValues = filters.filter(item => item.id === 'category')[0]
+        .values[0].path_from_root
+      return categoryValues
+    }
+  } catch (err) {
+    console.log('error in extractFilterCategories')
+    return []
   }
-  if (typeof maximumFractionDigits === 'number')
-    config.maximumFractionDigits = maximumFractionDigits
-  return Intl.NumberFormat(language, config).format(price)
 }

@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import styled from "styled-components";
 import ProductDetails from "../../components/ProductDetails";
 import { api } from "../../services/apis"
-import { product as productType, description as descriptionType, categories as categoriesType } from "../../types/product";
+import { categories as categoriesType } from "../../types/categories";
+import { product as productType, description as descriptionType } from "../../types/product";
 
 
 interface Props {
@@ -24,7 +25,9 @@ export default function Product({ product, error, description, categories }: Pro
     console.log(categories)
   }, [])
   return (
-    <Container><ProductDetails product={product} description={description} /></Container>
+    <Container>
+      <ProductDetails product={product} description={description} />
+    </Container>
   )
 }
 

@@ -17,6 +17,7 @@ export default function ProductDetails({ product, description }) {
             <ProductImg src={product.pictures[0].url} />
           </ContainerImg>
           <DescriptionTitle>{translate(language, "Product Description")}</DescriptionTitle>
+          <br />
           <Description>{description.plain_text}</Description>
         </ProductDetailsColumn>
         <ProductDetailsColumn flex="1">

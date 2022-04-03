@@ -1,8 +1,8 @@
 const theme = {
   colors: {
     text: {
-      primary: '#333',
-      secondary: ''
+      primary: '#333333',
+      secondary: '#666666'
     },
     border: {
       searchBar: '#c1b74d'
@@ -10,7 +10,7 @@ const theme = {
     background: {
       primary: '#f5f5f5',
       secondary: '#f7f7f7',
-      tertiary: '#FFF',
+      tertiary: '#FFFFFF',
       fourth: '#ffe600'
     },
     button: {
@@ -20,7 +20,7 @@ const theme = {
       },
       text: {
         primary: '#FFF',
-        secondary: '#333'
+        secondary: '#333333'
       }
     }
   }

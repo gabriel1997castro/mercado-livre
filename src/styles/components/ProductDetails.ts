@@ -66,7 +66,9 @@ export const DescriptionTitle = styled.h2`
   font-size: 1rem;
 `
 
-export const Description = styled.span``
+export const Description = styled.span`
+  color: ${props => props.theme.colors.text.secondary};
+`
 
 export const ProductDetailsColumn = styled(Column)`
   @media (max-width: 700px) {
