@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 70%;
   margin: 2rem;
   background-color: ${props => props.theme.colors.tertiaryBackground};
-  min-height: 80vh;
+  min-height: 70vh;
 
   @media (max-width: 700px) {
     width: 90%;

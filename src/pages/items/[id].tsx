@@ -1,5 +1,7 @@
 import { GetServerSideProps } from "next"
 import { useEffect } from "react";
+import styled from "styled-components";
+import ProductDetails from "../../components/ProductDetails";
 import { api } from "../../services/apis"
 import { product as productType } from "../../types/product";
 
@@ -8,12 +10,19 @@ interface Props {
   error: boolean;
   product: productType;
 }
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export default function Product({ product, error }: Props) {
   useEffect(() => {
     console.log(product)
   }, [])
   return (
-    <div>{product.title}</div>
+    <Container><ProductDetails product={product} /></Container>
   )
 }
 
