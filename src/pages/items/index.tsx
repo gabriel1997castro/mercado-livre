@@ -32,7 +32,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       if (res.status >= 200 && res.status < 300) {
         props.results = res.data.results
         props.categories = extractFilterCategories(res.data.filters)
-        console.log('aqui: ', props.categories)
       } else {
         props.results = []
         props.error = true

@@ -3,7 +3,7 @@ import { MEDIA_BREAKPOINTS } from '../../utils/constants'
 
 export const Container = styled.div`
   width: 70%;
-  margin: 2rem;
+  margin: 1rem;
   background-color: ${props => props.theme.colors.background.tertiary};
   min-height: 70vh;
 

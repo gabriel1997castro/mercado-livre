@@ -56,19 +56,6 @@ export function extractFilterCategories(filters: any): filterItem[] {
   }
 }
 
-// export function extractPathFromRoot(filters: filter[]): filterCategory[] {
-//   try {
-//     let newArr = []
-//     if (Array.isArray(filters)) {
-//       filters.map(item => (newArr = [...item.path_from_root]))
-//       return newArr
-//     }
-//   } catch (err) {
-//     console.log('error in extractFilterCategories')
-//     return []
-//   }
-// }
-
 export function extractAttributeValue(product: productType, attribute: string) {
   try {
     const att = product.attributes.filter(item => item.id === attribute)[0]

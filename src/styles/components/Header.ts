@@ -17,6 +17,7 @@ export const Logo = styled.img`
   @media ${MEDIA_BREAKPOINTS.mobile} {
     margin-right: 1rem;
   }
+  cursor: pointer;
 `
 
 export const ContainerAndLogo = styled.div`

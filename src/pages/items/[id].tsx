@@ -1,5 +1,4 @@
 import { GetServerSideProps } from "next"
-import { useEffect } from "react";
 import styled from "styled-components";
 import { Breadcrumb } from "../../components/Breadcrumb";
 import ProductDetails from "../../components/ProductDetails";
@@ -24,9 +23,6 @@ const Container = styled.div`
 `;
 
 export default function Product({ product, error, description, categories }: Props) {
-  useEffect(() => {
-    console.log('categories', categories)
-  }, [])
   return (
     <Container>
       {categories && <Breadcrumb categories={extractBreadcrumbData(categories, product)} />}
@@ -40,7 +36,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const props = { product: {}, error: false, description: {}, categories: {} }
   await api.get("/items/" + context.params.id)
     .then((res) => {
-      console.log(res)
       if (res.status >= 200 && res.status < 300) {
         props.product = res.data
       } else {
