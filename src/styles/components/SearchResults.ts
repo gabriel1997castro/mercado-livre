@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MEDIA_BREAKPOINTS } from '../../utils/constants'
 
 export const Container = styled.div`
   width: 70%;
@@ -6,11 +7,11 @@ export const Container = styled.div`
   background-color: ${props => props.theme.colors.background.tertiary};
   min-height: 70vh;
 
-  @media (max-width: 700px) {
+  @media ${MEDIA_BREAKPOINTS.mobile} {
     width: 90%;
   }
 
-  @media (max-width: 600px) {
+  @media ${MEDIA_BREAKPOINTS.tablet} {
     width: 100%;
   }
 `

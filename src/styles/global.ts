@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { MEDIA_BREAKPOINTS } from '../utils/constants'
 
 export default createGlobalStyle`
   * {
@@ -12,12 +13,15 @@ export default createGlobalStyle`
     color:  ${props => props.theme.colors.text};
     font: 400 16px Roboto, sans-serif;
 
-    @media (max-width: 700px) {
-      font-size: 14px;
+    @media ${MEDIA_BREAKPOINTS.mobile} {
+      font-size: 12px;
     }
 
-    @media (max-width: 450px) {
-      font-size: 12px;
+    @media ${MEDIA_BREAKPOINTS.tablet} {
+      font-size: 14px;
+    }
+    @media ${MEDIA_BREAKPOINTS.laptop} {
+      font-size: 16px;
     }
   }
 `

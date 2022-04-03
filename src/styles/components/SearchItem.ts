@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MEDIA_BREAKPOINTS } from '../../utils/constants'
 
 export const Container = styled.div`
   display: flex;
@@ -22,7 +23,7 @@ export const ContainerImg = styled.div`
 
   cursor: pointer;
 
-  @media (max-width: 700px) {
+  @media ${MEDIA_BREAKPOINTS.mobile} {
     width: 8rem;
   }
 `

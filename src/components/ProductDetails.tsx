@@ -29,7 +29,7 @@ export default function ProductDetails({ product, description }) {
               <span>{price[1]}</span>
             </span>
           </Price>
-          <Button type="button">Comprar</Button>
+          <Button style={{ width: '10rem' }} type="button">Comprar</Button>
         </ProductDetailsColumn>
       </ProductDetailsRow>
     </Container>

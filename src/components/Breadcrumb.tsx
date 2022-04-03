@@ -1,32 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Container } from '../styles/components/Breadcrumb';
 import { categories as categoriesType, filterCategory, filterItem } from '../types/categories'
 
-
-const Container = styled.div`
-  display: flex;
-  height: 45px;
-  width: 70%;
-  padding-top: 3rem;
-
-  span {
-    color: ${props => props.theme.colors.text.primary};
-    cursor: pointer;
-    &:last-child,
-    &:hover {
-      color: ${(props) => props.theme.colors.text.secondary};
-    }
-    & ~ span {
-      position: relative;
-      margin-left: 22px;
-      &::before {
-        position: absolute;
-        left: -22px;
-        content: url('/chevron.svg');
-      }
-    }
-  }
-`
 function isTheLastOne(categories: filterItem[], index: number) {
   return categories.length - 1 <= index;
 }
@@ -40,7 +16,12 @@ export function Breadcrumb({ categories }: Props) {
     <Container>
       {
         categories.map((category, index) => {
-          return (<span key={category.id}>{category.name} {!isTheLastOne(categories, index) && ' >'}</span>)
+          return (
+            <>
+              <span key={category.id}>{category.name}</span>
+              {!isTheLastOne(categories, index) && <span>{'>'}</span>}
+            </>
+          )
         })
       }
     </Container>

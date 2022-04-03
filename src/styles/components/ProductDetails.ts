@@ -1,18 +1,20 @@
 import styled from 'styled-components'
+import { MEDIA_BREAKPOINTS } from '../../utils/constants'
 import { Column, Row } from './BaseComponents'
 
 export const Container = styled.div`
   width: 70%;
   margin: 2rem;
+  margin-top: 1rem;
   background-color: ${props => props.theme.colors.background.tertiary};
   min-height: 70vh;
   min-width: 25rem;
 
-  @media (max-width: 700px) {
+  @media ${MEDIA_BREAKPOINTS.tablet} {
     width: 90%;
   }
 
-  @media (max-width: 600px) {
+  @media ${MEDIA_BREAKPOINTS.mobile} {
     width: 100%;
   }
 `
@@ -20,6 +22,10 @@ export const Container = styled.div`
 export const ProductImg = styled.img`
   object-fit: contain;
   height: 100%;
+  @media ${MEDIA_BREAKPOINTS.tablet} {
+    width: 25rem;
+    max-height: 26rem;
+  }
 `
 
 export const ContainerImg = styled.div`
@@ -31,8 +37,9 @@ export const ContainerImg = styled.div`
 
   cursor: pointer;
 
-  @media (max-width: 700px) {
+  @media ${MEDIA_BREAKPOINTS.tablet} {
     width: 8rem;
+    max-height: 26rem;
   }
 `
 
@@ -60,6 +67,10 @@ export const Price = styled.span`
       font-size: 1.2rem;
     }
   }
+
+  @media ${MEDIA_BREAKPOINTS.tablet} {
+    padding: 1rem 0.5rem;
+  }
 `
 
 export const DescriptionTitle = styled.h2`
@@ -71,7 +82,7 @@ export const Description = styled.span`
 `
 
 export const ProductDetailsColumn = styled(Column)`
-  @media (max-width: 700px) {
+  @media ${MEDIA_BREAKPOINTS.tablet} {
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -79,7 +90,7 @@ export const ProductDetailsColumn = styled(Column)`
 `
 
 export const ProductDetailsRow = styled(Row)`
-  @media (max-width: 950px) {
+  @media ${MEDIA_BREAKPOINTS.tablet} {
     flex-direction: ${(props: { changeDirectionOnMobile?: boolean }) =>
       props.changeDirectionOnMobile && 'column-reverse'};
   }

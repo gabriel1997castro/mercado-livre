@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MEDIA_BREAKPOINTS } from '../../utils/constants'
 export const Container = styled.header`
   display: flex;
   width: 100%;
@@ -13,7 +14,7 @@ export const Logo = styled.img`
   object-fit: contain;
   height: 2rem;
   margin-right: 2rem;
-  @media (max-width: 700px) {
+  @media ${MEDIA_BREAKPOINTS.mobile} {
     margin-right: 1rem;
   }
 `
@@ -22,7 +23,7 @@ export const ContainerAndLogo = styled.div`
   display: flex;
   width: 70%;
   min-width: 25rem;
-  @media (max-width: 700px) {
+  @media ${MEDIA_BREAKPOINTS.mobile} {
     width: 90%;
   }
 `
