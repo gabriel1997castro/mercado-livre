@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import React from 'react'
 import { Container, ContainerAndLogo, Logo } from '../styles/components/Header'
 import SearchBar from './SearchBar'
 

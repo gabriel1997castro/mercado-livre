@@ -1,4 +1,3 @@
-import React from 'react'
 import { GetServerSideProps } from "next"
 import SearchResults from '../../components/SearchResults'
 import { api } from '../../services/apis'
@@ -7,7 +6,7 @@ import { categories as categoriesType, filterCategory, filterItem } from '../../
 import { Container } from '../../styles/pages/Items'
 import { Breadcrumb } from '../../components/Breadcrumb'
 import { extractFilterCategories } from '../../utils/parsers'
-import { Head } from 'next/document'
+import Head from 'next/head'
 import { translate } from '../../utils/translation'
 import { useUiContext } from '../../store/UiContext'
 

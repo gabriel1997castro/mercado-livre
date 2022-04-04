@@ -82,7 +82,7 @@ export function extractBreadcrumbData(
     }
     return newArr
   } catch (err) {
-    console.log('error in extractFilterCategories')
+    console.log('error in extractBreadcrumbData')
     return []
   }
 }

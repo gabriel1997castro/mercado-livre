@@ -1,4 +1,4 @@
-import React from 'react'
+import GlobalStyle from "../styles/global"
 import Header from './Header'
 
 export default function Layout({ children }) {
@@ -6,6 +6,7 @@ export default function Layout({ children }) {
     <>
       <Header />
       {children}
+      <GlobalStyle />
     </>
   )
 }

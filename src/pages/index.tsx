@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Header from '../components/Header'
 import { Container } from '../styles/pages/Home'
 
 

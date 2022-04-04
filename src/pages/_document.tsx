@@ -2,7 +2,7 @@ import Document, { Head, Html, Main, NextScript, DocumentInitialProps, DocumentC
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
-  render() {
+  render(): JSX.Element {
     return (
       <Html lang="es">
         <Head>

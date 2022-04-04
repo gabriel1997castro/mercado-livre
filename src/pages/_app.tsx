@@ -1,15 +1,14 @@
 import { ThemeProvider } from "styled-components"
-import GlobalStyle from "../styles/global"
 import theme from "../styles/theme"
 import Layout from '../components/Layout';
 import { StoreProvider } from "../store/StoreProvider";
+import { AppProps } from "next/app";
 
-function MyApp({ Component, pageProps }) {
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <ThemeProvider theme={theme}>
       <StoreProvider>
         <Layout><Component {...pageProps} /></Layout>
-        <GlobalStyle />
       </StoreProvider>
     </ThemeProvider>
   )
