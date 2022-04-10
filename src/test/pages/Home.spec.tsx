@@ -6,11 +6,12 @@ import Home from '../../pages/index'
 
 
 describe('Home', () => {
+  const initialLanguage = 'es-AR'
+  const searchPlaceholder = 'Never stop searching'
 
   it('should change value on type in the <SearchBar />', () => {
     const utils = render(<Home />, {})
-    const initialLanguage = 'es-AR'
-    const input = utils.getByPlaceholderText(translate(initialLanguage, 'Never stop searching')) as HTMLInputElement
+    const input = utils.getByPlaceholderText(translate(initialLanguage, searchPlaceholder)) as HTMLInputElement
     fireEvent.change(input, { target: { value: 'iphone' } })
     expect(input.value).toBe('iphone')
   })
