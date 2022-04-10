@@ -9,14 +9,14 @@ export default function SearchBar() {
   const [{ language }] = useUiContext()
   const router = useRouter();
 
-  const handleSearch = (e: any) => {
+  const handleSearch = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault()
     router.push('/items?search=' + query)
   }
 
   return (
     <Container onSubmit={handleSearch}>
-      <Input placeholder={translate(language, 'Never stop searching')} onChange={(e) => setQuery(e.target.value)} />
+      <Input placeholder={translate(language, 'Never stop searching')} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setQuery(e.target.value)} />
       <IconButton aria-label={translate(language, 'search')} type="submit" disabled={query === ""}>
         <SearchIcon src="/magnifying-glass-solid.svg" alt={translate(language, 'search')} />
       </IconButton>
