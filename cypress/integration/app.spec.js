@@ -21,6 +21,10 @@ describe('Navigation', () => {
     cy.get('button[aria-label="' + translate(initialLanguage, 'search') + '"]').click()
 
     cy.url().should('include', 'search=' + searchTextEncoded)
+  })
 
+  it('should contain the maximum of 4 products in the items page', () => {
+    // get elements that starts with SearchItem__ContainerImg
+    cy.get('*[class^="SearchItem__ContainerImg"]').should('have.length.lessThan', 5)
   })
 })
