@@ -26,5 +26,19 @@ describe('Navigation', () => {
   it('should contain the maximum of 4 products in the items page', () => {
     // get elements that starts with SearchItem__ContainerImg
     cy.get('*[class^="SearchItem__ContainerImg"]').should('have.length.lessThan', 5)
+
+    cy.get('input[placeholder*="' + translate(initialLanguage, searchPlaceholder) + '"]').clear().type("la computadora mas barata del mundo")
+    cy.get('button[aria-label="' + translate(initialLanguage, 'search') + '"]').click()
+    cy.get('*[class^="SearchItem__ContainerImg"]').should('have.length.lessThan', 5)
+  })
+
+  it('should navigate to the product page', () => {
+    const searchText = 'iphone'
+    cy.get('input[placeholder*="' + translate(initialLanguage, searchPlaceholder) + '"]').clear().type(searchText)
+    cy.get('button[aria-label="' + translate(initialLanguage, 'search') + '"]').click()
+    cy.url().should('include', 'search=' + searchText)
+    cy.get('*[class^="SearchItem__ContainerImg"]:first').click()
+    cy.url().should('include', '/items/ML')
+    cy.get('button[aria-label="' + translate(initialLanguage, 'Buy') + '"]').should('be.visible').should('not.be.disabled')
   })
 })
