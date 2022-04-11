@@ -25,10 +25,10 @@ Some static words used in the website like placeholders and others are using a f
 ### Deliverable:
 
 - Source code in a private GitHub repository. Add user ITMLB as
-  contributor;
-- Unit testing and quality integration;
-- Documentation where necessary;
-- Instructions on how to run the project
+  contributor -> done;
+- Unit testing and quality integration -> doing;
+- Documentation where necessary -> done;
+- Instructions on how to run the project -> done;
 
 ## :gear: Requirements to run locally
 
@@ -36,6 +36,7 @@ Some static words used in the website like placeholders and others are using a f
 - [ReactJS](https://reactjs.org/)
 - [Typescript](https://www.typescriptlang.org/)
 - [NextJs](https://nextjs.org/)
+- [Cypress](https://www.cypress.io/)
 
 ## :rocket: Run
 
@@ -54,6 +55,17 @@ Some static words used in the website like placeholders and others are using a f
 3. Run locally
 <pre><code>
   $ yarn dev # ou npm dev
+</code></pre>
+  
+4. Tests
+  
+  For unity test run the command below:
+<pre><code>
+  $ yarn jest 
+</code></pre>
+  For integration tests with cypress run the command below:
+  <pre><code>
+  $ yarn test
 </code></pre>
 
 Open http://localhost:3000 to view it in the browser.
