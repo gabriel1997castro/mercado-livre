@@ -35,6 +35,13 @@ export function parsePrice(
 ) {
   const { currency_id: currency } = result
   const { price } = result
+  if (maximumFractionDigits === 0) {
+    const newPrice = Intl.NumberFormat(language, {
+      style: 'currency',
+      currency: currency
+    }).format(price)
+    return newPrice.split(',')[0]
+  }
   return Intl.NumberFormat(language, {
     style: 'currency',
     currency: currency,
