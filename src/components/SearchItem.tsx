@@ -25,7 +25,7 @@ export default function SearchItem({ result }: Props) {
         </Link>
         <ContainerInfo>
           <PriceAndTitle>
-            <Row style={{ alignItems: "center", maxHeight: "3rem" }}>
+            <Row alignItems="center" style={{ maxHeight: "3rem" }}>
               <Price>{parsePrice(language, result, 0)}</Price>
               {result.shipping.free_shipping && <FreeShippingIcon src="/truck-solid.svg" alt={translate(language, 'free-shipping')} />}
             </Row>
