@@ -69,3 +69,12 @@ export const Title = styled.span`
   padding: 0.5rem;
   cursor: pointer;
 `
+
+export const FreeShippingIcon = styled.img`
+  background-color: #22dd55;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  padding: 3px;
+  border-radius: 12px;
+`

@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import React from 'react'
 import { useUiContext } from '../store/UiContext';
-import { CityName, Container, ContainerImg, ContainerInfo, Divider, InternalContainer, Price, PriceAndTitle, ProductImg, Title } from '../styles/components/SearchItem';
+import { Row } from '../styles/components/BaseComponents';
+import { CityName, Container, ContainerImg, ContainerInfo, Divider, InternalContainer, Price, PriceAndTitle, ProductImg, Title, FreeShippingIcon } from '../styles/components/SearchItem';
 import { result as resultType } from "../types/result"
 import { parsePrice } from '../utils/parsers';
+import { translate } from '../utils/translation';
 
 interface Props {
   result: resultType;
@@ -23,8 +25,10 @@ export default function SearchItem({ result }: Props) {
         </Link>
         <ContainerInfo>
           <PriceAndTitle>
-            <Price>{parsePrice(language, result, 0)}
-            </Price>
+            <Row style={{ alignItems: "center", maxHeight: "3rem" }}>
+              <Price>{parsePrice(language, result, 0)}</Price>
+              {result.shipping.free_shipping && <FreeShippingIcon src="/truck-solid.svg" alt={translate(language, 'free-shipping')} />}
+            </Row>
             <Link href={"items/" + result.id}>
               <Title>{result.title}</Title>
             </Link>
