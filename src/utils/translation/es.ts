@@ -10,5 +10,8 @@ export const es = {
     'Mostrar los productos buscados en la barra de búsqueda',
   'Product details page': 'Página de detalles del producto',
   'Show the product details': 'Mostrar los detalles del producto',
-  'There are no results for your search.': 'No hay resultados para su búsqueda.'
+  'There are no results for your search.':
+    'No hay resultados para su búsqueda.',
+  'There was a problem, please try again later.':
+    'Hubo un problema, inténtalo de nuevo más tarde.'
 }

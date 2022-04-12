@@ -13,14 +13,13 @@ interface Props {
 }
 export default function SearchResults({ results, error }: Props) {
   const [{ language }] = useUiContext()
-  // results = []
   return (
     <Container>
-      {error && <Error><span>Houve um problema, tente novamente mais tarde.</span></Error>}
-      {results && Array.isArray(results) && results.length === 0 &&
+      {error && <Error><span data-testid="error-results-search">{translate(language, "There was a problem, please try again later.")}</span></Error>}
+      {!error && results && Array.isArray(results) && results.length === 0 &&
         <Row>
           <Column alignItems='center'>
-            {translate(language, "There are no results for your search.")}
+            <p data-testid="no-results-text">{translate(language, "There are no results for your search.")}</p>
           </Column>
         </Row>}
       {results && Array.isArray(results) && results.map(item => (<SearchItem key={item.id} result={item} />))}

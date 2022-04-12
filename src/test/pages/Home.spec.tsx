@@ -5,7 +5,7 @@ import '@testing-library/jest-dom'
 import Home from '../../pages/index'
 
 
-describe('Home', () => {
+describe('<Home>', () => {
   const initialLanguage = 'es-AR'
   const searchPlaceholder = 'Never stop searching'
 
